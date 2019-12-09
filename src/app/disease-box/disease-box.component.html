@@ -1,0 +1,6 @@
+<ul class="flex-container people-box wrap">
+  <li class="flex-item red" *ngFor="let i of arr(red)" [class.show]="show[0]" [class.hide]="!show[0]"></li>
+  <li class="flex-item orange" *ngFor="let i of arr(orange)" [class.show]="show[1]" [class.hide]="!show[1]"></li>
+  <li class="flex-item cyan" *ngFor="let i of arr(cyan)" [class.show]="show[2]" [class.hide]="!show[2]"></li>
+  <li class="flex-item green" *ngFor="let i of arr(green)" [class.show]="show[3]" [class.hide]="!show[3]"></li>
+</ul>

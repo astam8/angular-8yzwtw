@@ -1,0 +1,61 @@
+<div class="tree">
+	<ul>
+    <li>
+      <a class="group">Population</a>
+      <ul>
+        <li>
+          <a>{{ truncate(diseaseFrequency, 3) }}</a>
+          <ul>
+            <li>
+              <a class="group">Have disease</a>
+              <ul>
+                <li>
+                  <a>{{ truncate(truePositives, 3) }}</a>
+                  <ul>
+                    <li>
+                      <a class="red group">True positive ({{ truncate(diseaseFrequency, 3) }} * {{ truncate(truePositives, 3) }} = {{ truncate(truncate(diseaseFrequency, 3) * truncate(truePositives, 3), 3) }}) </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a>{{ truncate(1 - truePositives, 3) }}</a>
+                  <ul>
+                    <li>
+                      <a class="orange group">False negative ({{ truncate(diseaseFrequency, 3) }} * {{ truncate(1 - truePositives, 3) }} = {{ truncate(truncate(diseaseFrequency, 3) * truncate(1 - truePositives, 3), 3) }})</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a>{{ truncate(1 - diseaseFrequency, 3) }}</a>
+          <ul>
+            <li>
+              <a class="group">Healthy</a>
+              <ul>
+                <li>
+                  <a>{{ truncate(1 - trueNegatives, 3) }}</a>
+                  <ul>
+                    <li>
+                      <a class="cyan group">False positive ({{ truncate(1 - diseaseFrequency, 3) }} * {{ truncate(1 - trueNegatives, 3) }} = {{ truncate(truncate(1 - diseaseFrequency, 3) * truncate(1 - trueNegatives, 3), 3) }})</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a>{{ truncate(trueNegatives, 3) }}</a>
+                  <ul>
+                    <li>
+                      <a class="green group">True negative ({{ truncate(1 - diseaseFrequency, 3) }} * {{ truncate(trueNegatives, 3) }} = {{ truncate(truncate(1 - diseaseFrequency, 3) * truncate(trueNegatives, 3), 3) }})</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

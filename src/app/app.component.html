@@ -1,0 +1,82 @@
+<html>
+  <body>
+    <div class="container-fluid my-3">
+      <div class="py-4 text-center">
+        <h1>Exploring conditional probability with disease testing</h1>
+      </div>
+
+      <div class="py-4 text-center">
+        <div class="row">
+          <div class="col-md-6"><button type="button" class="btn btn-primary" (click)="diseaseFrequency = 0.15; truePositives = 0.997; trueNegatives = 0.985; onChange()">Preset: Ch. 15, #45 (HIV testing)</button></div>
+
+          <div class="col-md-6"><button type="button" class="btn btn-primary" (click)="diseaseFrequency = 0.00005; truePositives = 0.99; trueNegatives = 0.999; onChange()">Preset: Ch. 15 step-by-step example (TB testing)</button></div>
+        </div>
+      </div>
+
+      <div class="pb-5 text-center">
+        <div class="legend red">D</div>
+        <div class="legend-text">&nbsp;Has disease, positive test&nbsp;&nbsp;</div>
+
+        <div class="legend orange">D</div>
+        <div class="legend-text">&nbsp;Has disease, negative test&nbsp;&nbsp;</div>
+
+        <div class="legend cyan">D</div>
+        <div class="legend-text">&nbsp;Healthy, positive test&nbsp;&nbsp;</div>
+
+        <div class="legend green">D</div>
+        <div class="legend-text">&nbsp;Healthy, negative test&nbsp;&nbsp;</div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <app-disease-box
+            [red]="red"
+            [orange]="orange"
+            [cyan]="cyan"
+            [green]="green"
+            [show]="show"></app-disease-box>
+        </div>
+
+        <div class="col-md-4">
+          <div class="custom-slider d-flex flex-column justify-content-between text-center">
+            <div><h5 class="my-3">Disease frequency</h5>
+            <div><ng5-slider [(value)]="diseaseFrequency" [options]="options" (userChange)="onChange()"></ng5-slider></div></div>
+
+            <div><h5 class="my-3">True positive rate</h5>
+            <div><ng5-slider [(value)]="truePositives" [options]="options" (userChange)="onChange()"></ng5-slider></div></div>
+
+            <div><h5 class="my-3">True negative rate</h5>
+            <div><ng5-slider [(value)]="trueNegatives" [options]="options" (userChange)="onChange()"></ng5-slider></div></div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="button-column d-flex flex-column justify-content-between text-center">
+            <div><button type="button" class="btn btn-primary" (click)="showAll()">Show all (<div class="legend red">D</div><div class="legend orange">D</div><div class="legend cyan">D</div><div class="legend green">D</div>)</button></div>
+            <div><button type="button" class="btn btn-primary" (click)="showDisease()">Show affected population only (<div class="legend red">D</div><div class="legend orange">D</div>)</button></div>
+            <div><button type="button" class="btn btn-primary" (click)="showPositive()">Show positive results only (<div class="legend red">D</div><div class="legend cyan">D</div>)</button></div>
+            <div><button type="button" class="btn btn-primary" (click)="showNegative()">Show negative results only (<div class="legend orange">D</div><div class="legend green">D</div>)</button></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row my-3">
+        <div class="col">
+          <app-tree-diagram [diseaseFrequency]="diseaseFrequency"
+            [truePositives]="truePositives"
+            [trueNegatives]="trueNegatives"></app-tree-diagram>
+        </div>
+      </div>
+
+      <div class="row my-3">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <app-conditional-probabilities [diseaseFrequency]="diseaseFrequency"
+            [truePositives]="truePositives"
+            [trueNegatives]="trueNegatives"></app-conditional-probabilities>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+  </body>
+</html>

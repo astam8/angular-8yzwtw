@@ -1,0 +1,79 @@
+::ng-deep{
+  .custom-slider {
+    height: 100%;
+    
+    .ng5-slider {
+      width: 90%;
+
+      .ng5-slider-pointer {
+        width: .8vw;
+        height: .8vw;
+        top: 0px;
+        background-color: #333;
+
+        &:after {
+          display: none
+        }
+
+        &:hover:after {
+            display: none;
+        }
+
+        &.ng5-slider-active {
+          &:after {
+            display: none;
+          }
+        }
+      }
+
+      .ng5-slider-bubble {
+        bottom: 8px;
+        overflow: hidden;
+      }
+
+      .ng5-slider-bar {
+        height: .8vw;
+        border-radius: 5%;
+      }
+    }
+  }
+
+  mat-slider {
+    width: 95%;
+  }
+}
+
+.button-column {
+  height: 100%;
+}
+
+.legend {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0);
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  vertical-align: middle;
+
+  &.red {
+    background-color: tomato;
+  }
+
+  &.orange {
+    background-color: orange;
+  }
+
+  &.cyan {
+    background-color: cornflowerblue;
+  }
+
+  &.green {
+    background-color: forestgreen;
+  }
+}
+
+.legend-text {
+  display: inline-block;
+  top: 50%;
+  vertical-align: middle;
+}

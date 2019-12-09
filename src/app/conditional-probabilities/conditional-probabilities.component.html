@@ -1,0 +1,17 @@
+<div>Probability of <span class="font-weight-bold">having the disease</span> given a <span class="font-weight-bold">positive test</span>: <span class="red">{{ red }}</span> / (<span class="red">{{ red }}</span> + <span class="cyan">{{ cyan }}</span>) = <span class="font-weight-bold">{{ number.isNaN(diseaseGivenPositive) ? "Invalid" : diseaseGivenPositive }}</span></div>
+
+<div>Probability of <span class="font-weight-bold">having the disease</span> given a <span class="font-weight-bold">negative test</span>: <span class="orange">{{ orange }}</span> / (<span class="green">{{ green }}</span> + <span class="orange">{{ orange }}</span>) = <span class="font-weight-bold">{{ number.isNaN(diseaseGivenNegative) ? "Invalid" : diseaseGivenNegative }}</span></div>
+
+<div>Probability of <span class="font-weight-bold">not having the disease</span> given a <span class="font-weight-bold">positive test</span>: <span class="cyan">{{ cyan }}</span> / (<span class="cyan">{{ cyan }}</span> + <span class="red">{{ red }}</span>) = <span class="font-weight-bold">{{ number.isNaN(healthyGivenPositive) ? "Invalid" : healthyGivenPositive }}</span></div>
+
+<div>Probability of <span class="font-weight-bold">not having the disease</span> given a <span class="font-weight-bold">negative test</span>: <span class="green">{{ green }}</span> / (<span class="green">{{ green }}</span> + <span class="orange">{{ orange }}</span>) = <span class="font-weight-bold">{{ number.isNaN(healthyGivenNegative) ? "Invalid" : healthyGivenNegative }}</span></div>
+
+<!-- 
+  TODO: Add conditional probability formula (e.g. P(AuB)) and write out all the stuff!! like explain how you arrive at the red numbers (it's true npositive * disease freq)
+-->
+
+<div class="mt-3">
+
+  Recall how conditional probabilities are calculated: <img src="https://i.imgur.com/iaOVFtl.png">
+
+</div>
